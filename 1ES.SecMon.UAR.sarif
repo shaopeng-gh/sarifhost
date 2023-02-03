@@ -1,0 +1,124 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///C:/Task/Sarif/linter/credo/code_output_V4/"
+        }
+      },
+      "results": [
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Credo.Check.Consistency.SpaceAroundOperators"
+                }
+              ],
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pipelines/release-template.yml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "endColumn": 59,
+                  "snippet": {
+                    "text": "Credo.Check.Consistency.SpaceAroundOperators"
+                  },
+                  "startColumn": 26,
+                  "startLine": 20
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Two {{}} is not recommanded."
+          },
+          "rank": 13,
+          "ruleId": "Credo.Check.Design.TagTODO"
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Credo.Check.Consistency.SpaceAroundOperators"
+                }
+              ],
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pipelines/codeql-template.yml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "endColumn": 23,
+                  "snippet": {
+                    "text": "Credo.Check.Consistency.SpaceAroundOperators"
+                  },
+                  "startColumn": 15,
+                  "startLine": 8
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Missing qoute."
+          },
+          "rank": 13,
+          "ruleId": "Credo.Check.Readability.ModuleDoc"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "informationUri": "http://credo-ci.org/",
+          "name": "Credo",
+          "rules": [
+            {
+              "fullDescription": {
+                "markdown": "Every module should contain comprehensive documentation.\r\n\r\n    # preferred\r\n\r\n    defmodule MyApp.Web.Search do\r\n      @moduledoc \"\"\"\r\n      This module provides a public API for all search queries originating\r\n      in the web layer.\r\n      \"\"\"\r\n    end\r\n\r\n    # also okay: explicitly say there is no documentation\r\n\r\n    defmodule MyApp.Web.Search do\r\n      @moduledoc false\r\n    end\r\n\r\nMany times a sentence or two in plain english, explaining why the module\r\nexists, will suffice. Documenting your train of thought this way will help\r\nboth your co-workers and your future-self.\r\n\r\nOther times you will want to elaborate even further and show some\r\nexamples of how the module's functions can and should be used.\r\n\r\nIn some cases however, you might not want to document things about a module,\r\ne.g. it is part of a private API inside your project. Since Elixir prefers\r\nexplicitness over implicit behaviour, you should \"tag\" these modules with\r\n\r\n    @moduledoc false\r\n\r\nto make it clear that there is no intention in documenting it.\r\n",
+                "text": "Every module should contain comprehensive documentation.\r\n\r\n    # preferred\r\n\r\n    defmodule MyApp.Web.Search do\r\n      @moduledoc \"\"\"\r\n      This module provides a public API for all search queries originating\r\n      in the web layer.\r\n      \"\"\"\r\n    end\r\n\r\n    # also okay: explicitly say there is no documentation\r\n\r\n    defmodule MyApp.Web.Search do\r\n      @moduledoc false\r\n    end\r\n\r\nMany times a sentence or two in plain english, explaining why the module\r\nexists, will suffice. Documenting your train of thought this way will help\r\nboth your co-workers and your future-self.\r\n\r\nOther times you will want to elaborate even further and show some\r\nexamples of how the module's functions can and should be used.\r\n\r\nIn some cases however, you might not want to document things about a module,\r\ne.g. it is part of a private API inside your project. Since Elixir prefers\r\nexplicitness over implicit behaviour, you should \"tag\" these modules with\r\n\r\n    @moduledoc false\r\n\r\nto make it clear that there is no intention in documenting it.\r\n"
+              },
+              "helpUri": "https://hexdocs.pm/credo/Credo.Check.Readability.ModuleDoc.html",
+              "id": "Credo.Check.Readability.ModuleDoc",
+              "properties": {
+                "tags": [
+                  "readability"
+                ]
+              }
+            },
+            {
+              "fullDescription": {
+                "markdown": "FIXME comments are used to indicate places where source code needs fixing.\r\n\r\nExample:\r\n\r\n    # FIXME: this does no longer work, research new API url\r\n    defp fun do\r\n      # ...\r\n    end\r\n\r\nThe premise here is that FIXME should indeed be fixed as soon as possible and\r\nare therefore reported by Credo.\r\n\r\nLike all `Software Design` issues, this is just advice and might not be\r\napplicable to your project/situation.\r\n",
+                "text": "FIXME comments are used to indicate places where source code needs fixing.\r\n\r\nExample:\r\n\r\n    # FIXME: this does no longer work, research new API url\r\n    defp fun do\r\n      # ...\r\n    end\r\n\r\nThe premise here is that FIXME should indeed be fixed as soon as possible and\r\nare therefore reported by Credo.\r\n\r\nLike all 'Software Design' issues, this is just advice and might not be\r\napplicable to your project/situation.\r\n"
+              },
+              "helpUri": "https://hexdocs.pm/credo/Credo.Check.Design.TagFIXME.html",
+              "id": "Credo.Check.Design.TagFIXME",
+              "properties": {
+                "tags": [
+                  "design"
+                ]
+              }
+            },
+            {
+              "fullDescription": {
+                "markdown": "TODO comments are used to remind yourself of source code related things.\r\n\r\nExample:\r\n\r\n    # TODO: move this to a Helper module\r\n    defp fun do\r\n      # ...\r\n    end\r\n\r\nThe premise here is that TODO should be dealt with in the near future and\r\nare therefore reported by Credo.\r\n\r\nLike all `Software Design` issues, this is just advice and might not be\r\napplicable to your project/situation.\r\n",
+                "text": "TODO comments are used to remind yourself of source code related things.\r\n\r\nExample:\r\n\r\n    # TODO: move this to a Helper module\r\n    defp fun do\r\n      # ...\r\n    end\r\n\r\nThe premise here is that TODO should be dealt with in the near future and\r\nare therefore reported by Credo.\r\n\r\nLike all 'Software Design' issues, this is just advice and might not be\r\napplicable to your project/situation.\r\n"
+              },
+              "helpUri": "https://hexdocs.pm/credo/Credo.Check.Design.TagTODO.html",
+              "id": "Credo.Check.Design.TagTODO",
+              "properties": {
+                "tags": [
+                  "design"
+                ]
+              }
+            }
+          ],
+          "version": "1.7.0-dev-ref.users/shaopeng-gh/sarifdev.0254eb53+uncommittedchanges"
+        }
+      }
+    }
+  ]
+}
